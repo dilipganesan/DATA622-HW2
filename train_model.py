@@ -74,6 +74,12 @@ def impute_data(df, target):
 def print_model_output(sample_test, prediction, score=None):
     con_mat = metrics.confusion_matrix(sample_test, prediction)
     classreport = metrics.classification_report(sample_test, prediction)
+    print('Random Forrest Classifier Model:')
+    print(prediction)
+    print('\nConfusion Matrix:')
+    print(con_mat)
+    print('\nClassification Rport:')
+    print(classreport)
     try:
         with open('model_stats.txt', 'w') as text_file:
             with redirect_stdout(text_file):
